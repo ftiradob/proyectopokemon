@@ -1,4 +1,4 @@
-# Proyectopokemon
+# Proyecto pokemon
 
 1. **Fase 1:** Consultas a la API
 2. **Fase 2:** Petición con python
