@@ -8,4 +8,8 @@ app=Flask(__name__)
 def inicio():
 	return render_template("index.html")
 
+@app.route('/left',methods=["GET","POST"])
+def left():
+	return render_template("left-sidebar.html")
+
 app.run('0.0.0.0',int(port), debug=True)
