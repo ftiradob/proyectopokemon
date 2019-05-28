@@ -1610,7 +1610,7 @@ input, select, textarea {
 
 		#banner h2 {
 			font-size: 3.3em;
-			color: #000000;
+			color: #000000 !important;
 			text-align: center;
 			letter-spacing: -2px;
 			margin: 0;
