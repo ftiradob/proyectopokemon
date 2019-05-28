@@ -1593,7 +1593,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner-wrapper {
-		background: #c8d2bc url(../../images/mojon.jpg);
+		background: #c8d2bc url(../../images/pokeball.jpg) !important;
 		padding: 2em 0;
 	}
 
@@ -1602,7 +1602,7 @@ input, select, textarea {
 		width: 100%;
 		padding: 6em 0;
 		border-radius: 10px;
-		background-image: url(../../images/mojon.jpg);
+		background-image: url(../../images/mojon.jpg) !important;
 		background-size: cover;
 		text-align: center;
 		box-shadow: inset 0 0 0 20px #fff;
