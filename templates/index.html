@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block contenido %}
+	<div class="mostrariniciales" style="background-image: url('../static/images/fondo1.jpg')">
+		<h1>Pokemon iniciales</h1>
+		<div class="row">
+	{% for datos,datos2,datos3 in lista -%}
+		<div class="guau">
+			<img src="{{ datos }}" width="300px" height="300px"/>
+			<h3 class="single-book__title" style="color:black;"><b>Nº Pokedex: {{ datos3 }}</b></h3>
+			<h3 class="single-book__title" style="color:black;"><b>Nombre: {{ datos2 }}</b></h3>
+		</div>
+	{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block cartas %}
+	<div class="cartasiniciales" style="background-image: url('../static/images/fondo1.jpg')">
+		<h1>Cartas iniciales</h1>
+		<div>
+	{% for datos in listacartas -%}
+		<img src="{{ datos }}" width="300px" height="300px"/>
+	{% endfor %}
+		</div>
+	</div>
+{% endblock %}
