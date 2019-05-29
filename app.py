@@ -32,16 +32,41 @@ def mostrarnombreiniciales():
             print("Error en la petición")
     return listanombres
 
+def mostrarnumeropokedex():
+    listapokedex=[]
+    for i in listainiciales:
+        r=requests.get(URL_BASE+"pokemon/"+i)
+        if r.status_code==200:
+            doc=r.json()
+            listapokedex.append(doc["id"])
+        else:
+            print("Error en la petición")
+    return listapokedex
+
+def muestradescripcion():
+    encontrado=False
+    objeto=input("Indique el Pokemon: ")
+    r=requests.get(URL_BASE+"item/"+objeto)
+    if r.status_code==200:
+        doc=r.json()
+        for idioma in doc["flavor_text_entries"]:
+            if idioma["language"]["name"]=="es" and encontrado==False:
+                print(idioma["text"])
+                encontrado=True
+    else:
+        print("Error en la petición")
+
+
 @app.route('/',methods=["GET","POST"])
 def inicio():
 	listaimagenes=mostrariniciales()
 	listanombres=mostrarnombreiniciales()
-	elementos=len(listaimagenes)
-	return render_template("index.html",lista=zip(listaimagenes,listanombres))
+	listapokedex=mostrarnumeropokedex()
+	return render_template("index.html",lista=zip(listaimagenes,listanombres,listapokedex))
 
 @app.route('/nivel',methods=["GET","POST"])
 def nivel():
-	return render_template("nivel.html")
+	return render_template("nivel.html",listaobjetos=zip())
 
 
 app.run('0.0.0.0',int(port), debug=True)

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block nivel %}
+	<div class="nivelevolucion" style="background-image: url('../static/images/verde.jpg')">
+		<h1>OBJETOS POKEMON</h1>
+		<div class="guau">
+			<form action="/nivel" method="post">
+			<p>
+			Indica el objeto: <input type="text" name="cuenta" autofocus required/>
+			<input type="submit" value="Enviar" />
+			</form>
+        </div>
+	</div>
+{% endblock %}
