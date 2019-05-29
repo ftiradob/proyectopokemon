@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>POKEMANIACO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="icon" href="../static/images/favicon.jpg" type="image/x-icon">
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+
+								<header id="header">
+									<h1><a href="/" id="logo">Pokémon</a></h1>
+									<nav id="nav">
+										<a href="/" class="current-page-item">Home</a>
+										<a href="/nivel">¿A qué nivel evoluciona?</a>
+										<a href="twocolumn2.html">Cartas TCG</a>
+										<a href="base.html">One Column</a>
+									</nav>
+								</header>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Banner -->
+				<div id="banner-wrapper">
+					<div class="container">
+
+						<div id="banner">
+							<h2> Pokemaniaco</h2>
+							<span>Aplicación web de información sobre Pokémon</span>
+						</div>
+
+					</div>
+				</div>
+
+			<!-- Main -->
+
+			<div id="headerwrap">
+				<div class="container">
+						<div class="row centered">
+							{% block contenido %}{% endblock %}
+							{% block cartas %}{% endblock %}
+							{% block nivel %}{% endblock %}
+						</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
