@@ -6,6 +6,7 @@ port=os.environ["PORT"]
 from flask import Flask, render_template
 app=Flask(__name__)
 URL_BASE="https://pokeapi.co/api/v2/"
+URL_BASETCG="https://api.pokemontcg.io/v1/"
 listainiciales=["bulbasaur","charmander","squirtle","chikorita","cyndaquil","totodile","treecko","chimchar","piplup","snivy","tepig","oshawott","chespin","fennekin","froakie","rowlet","litten","popplio"]
 
 def mostrariniciales():
@@ -21,7 +22,7 @@ def mostrariniciales():
 
 def mostrarnombreiniciales():
     listanombres=[]
-    for i in listanombres:
+    for i in listainiciales:
         r=requests.get(URL_BASE+"pokemon/"+i)
         if r.status_code==200:
             doc=r.json()
@@ -34,7 +35,13 @@ def mostrarnombreiniciales():
 @app.route('/',methods=["GET","POST"])
 def inicio():
 	listaimagenes=mostrariniciales()
-	return render_template("index.html",listaimagenes=listaimagenes)
+	listanombres=mostrarnombreiniciales()
+	elementos=len(listaimagenes)
+	return render_template("index.html",lista=zip(listaimagenes,listanombres))
+
+@app.route('/nivel',methods=["GET","POST"])
+def nivel():
+	return render_template("nivel.html")
 
 
 app.run('0.0.0.0',int(port), debug=True)
