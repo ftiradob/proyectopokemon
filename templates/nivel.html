@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block nivel %}
-<div class="nivelevolucion" style="background-image: url('../static/images/verde.jpg')">
-	<h1>OBJETOS POKEMON</h1>
+
+	<h1><br/><br/>OBJETOS POKEMON<br/><br/><br/><br/></h1>
+	<ul style="float:right" class="actions">
+			<li><br/><a href="/buscar" class="button big" &nbsp;>Volver atrás</a></li>
+	</ul>
 	<div class="guau">
-		<img src="{{ imagenobjeto }}" width="300px" height="300px"/>
+			<br/><br/><br/><br/>
+		<img src="{{ imagenobjeto }}" width="150px" height="150px"/>
 		<h3 class="single-book__title" style="color:black;"><b>Coste: {{ coste }} Pokedólares</b></h3>
 		<h3 class="single-book__title" style="color:black;"><b>Descripción: {{ descripcion }}</b></h3>
 	</div>
-</div>
+
 {% endblock %}

@@ -75,6 +75,15 @@ def muestraimagenobjeto(objeto):
     else:
         print("Error en la petición")
 
+def muestracartas(poketcg):
+    listasa=[]
+    parametros={'name':poketcg}
+    r=requests.get(URL_BASETCG+"cards",params=parametros)
+    if r.status_code==200:
+        doc=r.json()
+        for i in doc["cards"]:
+            listasa.append(i["imageUrl"])
+        return listasa
 
 @app.route('/',methods=["GET","POST"])
 def inicio():
@@ -100,9 +109,9 @@ def buscartcg():
     return render_template("formulariotcg.html")
 
 @app.route('/tcg',methods=["POST"])
-def nivel():
+def cartastcg():
     poketcg=request.form.get("poketcg")
-    cartaspokemon=
-    return render_template("tcg.html",cartaspokemon=cartaspokemon)
+    listasa=muestracartas(poketcg)
+    return render_template("tcg.html",listasa=listasa,poketcg=poketcg)
 
 app.run('0.0.0.0',int(port), debug=True)

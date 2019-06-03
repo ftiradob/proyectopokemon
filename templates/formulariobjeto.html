@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 {% block nivel %}
-<div class="nivelevolucion" style="background-image: url('../static/images/verde.jpg')">
-    <h1>OBJETOS POKEMON</h1>
+
+    <h1><br/><br/>OBJETOS POKEMON</h1>
     <div class="guau">
         <form action="/nivel" method="post">
-        <p>
-        Indica el objeto: <input type="text" name="objeto" autofocus required/>
-        <input type="submit" value="Enviar" />
+            <div class="row gtr-uniform">
+                <div class="col-6 col-12-xsmall">
+                        <br/><br/><br/><br/><br/><br/><br/>
+                    <input type="text" name="objeto" placeholder="Indica el objeto" autofocus required/>
+                </div>
+            </div>
+            <div class="col-12">
+                <ul class="actions">
+                        <br/>
+                    <li><input class= "button small" type="submit" value="Enviar" /></li>
+                </ul>
+            </div>
         </form>
     </div>
-</div>
+
 {% endblock %}

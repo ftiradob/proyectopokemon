@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 {% block tcg %}
-<div class="cartatcg" style="background-image: url('../static/images/verde.jpg')">
-	<h1>CARTAS POKEMON</h1>
-	<div class="guau">
-		<img src="{{ imagenobjeto }}" width="300px" height="300px"/>
-	</div>
-</div>
+    <div class="cartatcg" style="background-image: url('../static/images/verde.jpg')">
+        <h1>CARTAS {{ poketcg }}<br/><br/><br/><br/></h1>
+        <ul style="float:right" class="actions">
+                <li><a href="/buscartcg" class="button big">Volver atrás</a></li>
+        </ul>
+        <div class="row">
+    {% for datos in listasa -%}
+        <div class="guau">
+            <img src="{{ datos }}" width="250px" height="330px"/>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
 {% endblock %}

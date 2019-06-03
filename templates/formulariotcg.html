@@ -1,13 +1,21 @@
 {% extends "base.html" %}
 {% block tcg %}
-<div class="cartatcg" style="background-image: url('../static/images/verde.jpg')">
-    <h1>CARTAS TCG</h1>
+
+    <h1><br/><br/>CARTAS TCG</h1>
     <div class="guau">
         <form action="/tcg" method="post">
-        <p>
-        Indica el objeto: <input type="text" name="poketcg" autofocus required/>
-        <input type="submit" value="Enviar" />
+            <div class="row gtr-uniform">
+                    <div class="col-6 col-12-xsmall">
+                            <br/><br/><br/><br/><br/><br/><br/>
+                        <input type="text" name="poketcg" placeholder="Indica el Pokemon" autofocus required/>
+                    </div>
+            </div>
+            <div class="col-12">
+                    <ul class="actions">
+                            <br/>
+                        <li><input class= "button small" type="submit" value="Enviar" /></li>
+                    </ul>
+            </div>
         </form>
     </div>
-</div>
 {% endblock %}
