@@ -13,14 +13,3 @@
 		</div>
 	</div>
 {% endblock %}
-
-{% block cartas %}
-	<div class="cartasiniciales" style="background-image: url('../static/images/fondo1.jpg')">
-		<h1>Cartas iniciales</h1>
-		<div>
-	{% for datos in listacartas -%}
-		<img src="{{ datos }}" width="300px" height="300px"/>
-	{% endfor %}
-		</div>
-	</div>
-{% endblock %}
