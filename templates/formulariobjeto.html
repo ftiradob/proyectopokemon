@@ -1,13 +1,41 @@
 {% extends "base.html" %}
 {% block nivel %}
 
-    <h1><br/><br/>OBJETOS POKEMON</h1>
+    <h1><br/><br/>GUÍA POKEBALL</h1>
     <div class="guau">
         <form action="/nivel" method="post">
-            <div class="row gtr-uniform">
+            <div class="col-12">
+                    <p><br/><br/><br/>Escoge una pokeball: </p>
                 <div class="col-6 col-12-xsmall">
-                        <br/><br/><br/><br/><br/><br/><br/>
-                    <input type="text" name="objeto" placeholder="Indica el objeto" autofocus required/>
+                    <select name="objeto">
+                		<option value="poke-ball">Poke Ball</option>
+                		<option value="great-ball">Super Ball</option>
+                        <option value="ultra-ball">Ultra Ball</option>
+                        <option value="master-ball">Master Ball</option>
+                		<option value="quick-ball">Veloz Ball</option>
+                        <option value="safari-ball">Safari Ball</option>
+                        <option value="fast-ball">Rapid Ball</option>
+                		<option value="level-ball">Nivel Ball</option>
+                        <option value="lure-ball">Cebo Ball</option>
+                        <option value="heavy-ball">Peso Ball</option>
+                		<option value="love-ball">Amor Ball</option>
+                        <option value="friend-ball">Amigo Ball</option>
+                        <option value="moon-ball">Luna Ball</option>
+                		<option value="sport-ball">Competi Ball</option>
+                        <option value="luxury-ball">Lujo Ball</option>
+                        <option value="nest-ball">Nido Ball</option>
+                		<option value="premier-ball">Honor Ball</option>
+                        <option value="net-ball">Malla Ball</option>
+                        <option value="timer-ball">Turno Ball</option>
+                		<option value="dive-ball">Buceo Ball</option>
+                        <option value="repeat-ball">Acopio Ball</option>
+                        <option value="heal-ball">Sana Ball</option>
+                        <option value="dusk-ball">Ocaso Ball</option>
+                        <option value="park-ball">Parque Ball</option>
+                        <option value="cherish-ball">Gloria Ball</option>
+                        <option value="dream-ball">Ensueño Ball</option>
+                        <option value="beast-ball">Ente Ball</option>
+                    </select>
                 </div>
             </div>
             <div class="col-12">
