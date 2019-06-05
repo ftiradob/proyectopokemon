@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block nivel %}
 
-	<h1><br/><br/>GUÍA POKEBALL<br/><br/><br/><br/></h1>
+	<h1><br/><br/>GUÍA OBJETOS<br/><br/><br/><br/></h1>
 	<ul style="float:right" class="actions">
 			<li><br/><a href="/buscar" class="button big" &nbsp;>Volver atrás</a></li>
 	</ul>
 	<div class="guau">
 			<br/><br/><br/><br/>
 		<img src="{{ imagenobjeto }}" width="150px" height="150px"/>
+		<h3 class="single-book__title" style="color:black;"><b>Nombre: {{ miidioma }}</b></h3>
 		{% if coste==0 %}
 		<h3 class="single-book__title" style="color:black;"><b>No se puede comprar en una tienda. Precio indefinido.</b></h3>
 		{% else %}

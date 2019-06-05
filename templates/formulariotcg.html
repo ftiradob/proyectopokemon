@@ -5,32 +5,12 @@
     <div class="guau">
         <form action="/tcg" method="post">
             <div class="col-12">
-                    <p><br/><br/><br/>Escoge un pokemon: </p>
+                    <p><br/><br/><br/>Escoge una carta: </p>
                     <div class="col-6 col-12-xsmall">
                             <select name="poketcg">
-                                    <option value="bulbasaur">Bulbasaur</option>
-                                    <option value="charmander">Charmander</option>
-                                    <option value="squirtle">Squirtle</option>
-                                    <option value="pikachu">Pikachu</option>
-                                    <option value="eevee">Eevee</option>
-                                    <option value="chikorita">Chikorita</option>
-                                    <option value="cyndaquil">Cyndaquil</option>
-                                    <option value="totodile">Totodile</option>
-                                    <option value="treecko">Treecko</option>
-                                    <option value="torchic">Torchic</option>
-                                    <option value="mudkip">Mudkip</option>
-                                    <option value="turtwig">Turtwig</option>
-                                    <option value="chimchar">Chimchar</option>
-                                    <option value="piplup">Piplup</option>
-                                    <option value="snivy">Snivy</option>
-                                    <option value="tepig">Tepig</option>
-                                    <option value="oshawott">Oshawott</option>
-                                    <option value="chespin">Chespin</option>
-                                    <option value="fennekin">Fennekin</option>
-                                    <option value="froakie">Froakie</option>
-                                    <option value="rowlet">Rowlet</option>
-                                    <option value="litten">Litten</option>
-                                    <option value="popplio">Popplio</option>
+                                {% for i in todoslospoke -%}
+                                    <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
                                 </select>
                     </div>
             </div>

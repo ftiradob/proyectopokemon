@@ -57,6 +57,19 @@ def muestradescripcion(objeto):
     else:
     	print("Error en la petición")
 
+def muestranombreidioma(objeto):
+    encontri=False
+    r=requests.get(URL_BASE+"item/"+objeto)
+    if r.status_code==200:
+        doc=r.json()
+        for idiomita in doc["names"]:
+            if idiomita["language"]["name"]=="es" and encontri==False:
+                miidioma=idiomita["name"]
+                encontri=True
+        return miidioma
+    else:
+    	print("Error en la petición")
+
 def muestracoste(objeto):
     r=requests.get(URL_BASE+"item/"+objeto)
     if r.status_code==200:
@@ -84,6 +97,31 @@ def muestracartas(poketcg):
         for i in doc["cards"]:
             listasa.append(i["imageUrl"])
         return listasa
+    else:
+        print("Error en la petición")
+
+def muestraobjetosformulario():
+    todoslosobj=[]
+    parametris={'limit':954}
+    r=requests.get(URL_BASE+"item/",params=parametris)
+    if r.status_code==200:
+        doc=r.json()
+        for i in doc["results"]:
+            todoslosobj.append(i["name"])
+        return todoslosobj
+    else:
+        print("Error en la petición")
+
+def muestratodoslospoke():
+    todoslospoke=[]
+    r=requests.get(URL_BASETCG+"cards")
+    if r.status_code==200:
+        doc=r.json()
+        for i in doc["cards"]:
+            todoslospoke.append(i["name"])
+        return todoslospoke
+    else:
+        print("Error en la petición")
 
 @app.route('/',methods=["GET","POST"])
 def inicio():
@@ -94,19 +132,22 @@ def inicio():
 
 @app.route('/buscar',methods=["GET","POST"])
 def buscar():
-    return render_template("formulariobjeto.html")
+    todoslosobj=muestraobjetosformulario()
+    return render_template("formulariobjeto.html", todoslosobj=todoslosobj)
 
 @app.route('/nivel',methods=["POST"])
 def nivel():
     objeto=request.form.get("objeto")
     descripcion=muestradescripcion(str(objeto))
+    miidioma=muestranombreidioma(str(objeto))
     coste=muestracoste(objeto)
     imagenobjeto=muestraimagenobjeto(objeto)
-    return render_template("nivel.html",descripcion=descripcion,coste=coste,imagenobjeto=imagenobjeto)
+    return render_template("nivel.html",descripcion=descripcion,coste=coste,imagenobjeto=imagenobjeto,miidioma=miidioma)
 
 @app.route('/buscartcg',methods=["GET","POST"])
 def buscartcg():
-    return render_template("formulariotcg.html")
+    todoslospoke=muestratodoslospoke()
+    return render_template("formulariotcg.html",todoslospoke=todoslospoke)
 
 @app.route('/tcg',methods=["POST"])
 def cartastcg():
