@@ -8,8 +8,8 @@
                     <p><br/><br/><br/>Escoge un objeto: </p>
                 <div class="col-6 col-12-xsmall">
                     <select name="objeto">
-                        {% for i in todoslosobj -%}
-                            <option value="{{ i }}">{{ i }}</option>
+                        {% for i,a in todoslosobj -%}
+                            <option value="{{ i }}">{{ a }}</option>
                         {% endfor %}
                     </select>
                 </div>

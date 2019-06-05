@@ -112,6 +112,18 @@ def muestraobjetosformulario():
     else:
         print("Error en la petición")
 
+def objetosformulariobonitos():
+    objetosbonitos=[]
+    parametrus={'limit':954}
+    r=requests.get(URL_BASE+"item/",params=parametrus)
+    if r.status_code==200:
+        doc=r.json()
+        for i in doc["results"]:
+            objetosbonitos.append(i["name"].replace("-"," ").title())
+        return objetosbonitos
+    else:
+        print("Error en la petición")
+
 def muestratodoslospoke():
     todoslospoke=[]
     r=requests.get(URL_BASETCG+"cards")
@@ -133,7 +145,8 @@ def inicio():
 @app.route('/buscar',methods=["GET","POST"])
 def buscar():
     todoslosobj=muestraobjetosformulario()
-    return render_template("formulariobjeto.html", todoslosobj=todoslosobj)
+    objetosbonitos=objetosformulariobonitos()
+    return render_template("formulariobjeto.html", todoslosobj=zip(todoslosobj, objetosbonitos))
 
 @app.route('/nivel',methods=["POST"])
 def nivel():
