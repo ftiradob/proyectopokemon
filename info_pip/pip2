@@ -1,0 +1,11 @@
+cd virtalenv/
+rm -rf flask/
+python3 -m venv flask (CREAR ENTORNO VIRTUAL)
+source flask/bin/activate (ACTIVAR)
+
+pip install flask (INSTALAR FLASK)
+pip freeze (MOSTRAR PAQUETES INSTALADOS EN ENTORNO VIRTUAL)
+deactivate (DESACTIVAR)
+
+export PORT=8000 (ANTES DE EJECUTAR LA PÁGINA)
+
